@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HNG Stage 0 Task - Ilesanmi Tolulope</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <article data-testid="test-profile-card" class="profile-card">
+      <div class="card-background"></div>
+      <div class="card-content">
+        <div class="profile-container">
+          <header>
+            <figure class="avatar-container">
+              <img
+                src="https://pbs.twimg.com/media/GrBA3yAWEAAkHBM?format=jpg&name=900x900"
+                alt="Tolulope Ilesanmi Profile Image"
+                data-testid="test-user-avatar"
+                class="avatar"
+              />
+            </figure>
+            <div>
+              <h2 data-testid="test-user-name">Tolulope Ilesanmi</h2>
+              <p data-testid="test-user-bio">
+                Frontend developer with a passion for creating accessible and
+                responsive web experiences. I love solving complex problems and
+                learning new technologies.
+              </p>
+            </div>
+          </header>
+          <nav aria-label="Social media links">
+            <ul data-testid="test-user-social-links">
+              <li data-testid="test-user-social-instagram">
+                <a
+                  href="https://www.instagram.com/tolu__nimi?igsh=MXN6M29yeXJhN3Z3Ng=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram profile"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li data-testid="test-user-social-facebook">
+                <a
+                  href="https://www.facebook.com/marvelous.ilesanmi.9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook profile"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li data-testid="test-user-social-x">
+                <a
+                  href="https://x.com/dev__tolu?t=Y-q7l2pvY5032cfCsZp2mA&s=08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter profile"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li data-testid="test-user-social-linkedin">
+                <a
+                  href="https://www.linkedin.com/in/tolulope-ilesanmi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Linkedin profile"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li data-testid="test-user-social-github">
+                <a
+                  href="https://github.com/tolulope-i"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Github profile"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="time-container">
+            <h3>Current Time</h3>
+            <p
+              data-testid="test-user-time"
+              id="time"
+              aria-label="current time"
+            ></p>
+          </div>
+        </div>
+
+        <div class="details-container">
+          <section class="profile-details">
+            <div class="hobbies">
+              <h3>Hobbies</h3>
+              <ul data-testid="test-user-hobbies">
+                <li>Reading Documentations</li>
+                <li>Writing Codes</li>
+                <li>Playing Saxophone</li>
+                <li>Watching Animal Documentary</li>
+              </ul>
+            </div>
+            <div class="dislikes">
+              <h3>Dislikes</h3>
+              <ul data-testid="test-user-dislikes">
+                <li>Unreliable internet</li>
+                <li>Traffic jams</li>
+                <li>Spoilers for movies and books</li>
+                <li>Messy code</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>
