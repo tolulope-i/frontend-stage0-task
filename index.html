@@ -21,7 +21,29 @@
   </head>
 
   <body>
-    <article data-testid="test-profile-card" class="profile-card">
+    <nav class="tab-btn-wrapper">
+      <ul>
+        <li>
+          <a href="" class="tab-btn active" data-tab="profile" role="button"
+            >Profile</a
+          >
+        </li>
+        <li>
+          <a href="" class="tab-btn" data-tab="about" role="button">About</a>
+        </li>
+        <li>
+          <a href="" class="tab-btn" data-tab="contact" role="button"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <article
+      data-testid="test-profile-card"
+      class="profile-card card active"
+      id="profile-container"
+    >
       <div class="card-background"></div>
       <div class="card-content">
         <div class="profile-container">
@@ -43,7 +65,7 @@
               </p>
             </div>
           </header>
-          <nav aria-label="Social media links">
+          <nav aria-label="Social media links" class="social-links">
             <ul data-testid="test-user-social-links">
               <li data-testid="test-user-social-instagram">
                 <a
@@ -128,6 +150,213 @@
         </div>
       </div>
     </article>
+
+    <main class="card about-card" data-testid="test-about-page" id="about">
+      <article>
+        <h2>About Me</h2>
+        <section class="bio" data-testid="test-about-bio">
+          <h3>Short Bio</h3>
+          <p>
+            I’m someone who believes that growth happens when curiosity meets
+            consistency. My journey into tech started with nothing but a laptop,
+            a bootcamp, a few tutorials, and an unshakable desire to create
+            something meaningful. I remember the first time I built a small
+            webpage, although it wasn’t perfect, but it sparked something in me.
+            Since then, I’ve been on an adventure of learning, unlearning, and
+            building. Now, as a frontend developer, I enjoy turning ideas into
+            interactive, user-friendly experiences. I love the feeling of
+            bringing design to life, solving tricky problems, and watching my
+            skills evolve with every new challenge. Beyond code, I’m driven by
+            connection, by the stories, collaborations, and shared passion that
+            make tech such a vibrant space to grow in.
+          </p>
+        </section>
+        <section class="goals" data-testid="test-about-goals">
+          <h3>My Goals in This Program</h3>
+          <p>
+            My goal in the HNG program is to go beyond just learning, I want to
+            grow through experience and build meaningful connections with people
+            who share the same hunger for improvement. I see this program as a
+            bridge between what I’ve already learnt and the professional
+            developer I aspire to become. I want to work on real projects that
+            push me outside my comfort zone, collaborate with talented
+            teammates, and learn how to navigate challenges in a team
+            environment. I believe growth happens in community, through
+            feedback, collaboration, and shared problem-solving. So while I aim
+            to sharpen my technical skills, I also want to form bonds with
+            people who inspire me, challenge me, and maybe even walk alongside
+            me long after HNG ends.
+          </p>
+        </section>
+        <section class="confidence" data-testid="test-about-confidence">
+          <h3>Areas of Growth</h3>
+          <p>
+            If I’m being honest, I sometimes struggle with confidence when I’m
+            stepping into something unfamiliar, like a new technology or a
+            complex project that feels bigger than what I’ve handled before.
+            There are moments I question if I’m good enough or if I belong in
+            certain spaces where everyone seems to know more. But over time,
+            I’ve learned that it’s okay to feel uncertain. Confidence, for me,
+            is no longer about having all the answers, it’s about staying
+            curious enough to find them. I’m learning to give myself grace, to
+            ask questions without fear, and to see mistakes as proof that I’m
+            trying. I may not always feel confident, but I’m always willing to
+            grow and that, I’ve realized, is a quiet kind of courage.
+          </p>
+        </section>
+        <section class="future-note" data-testid="test-about-future-note">
+          <h3>Note To My Future Self</h3>
+          <p>
+            Hey future me, I hope you’re smiling right now, not because
+            everything is perfect, but because you remember where it all
+            started. You remember the nights you sat staring at error messages
+            that made no sense. You remember doubting whether you were even cut
+            out for this tech journey. You remember that feeling of staring at a
+            blank VS Code window, unsure how to begin, but you began anyway.
+            Back then, every little win mattered. The first “Hello World.” The
+            first time your CSS grid finally aligned. The first project that
+            actually worked the way you imagined it would. You didn’t know it
+            then, but every late night debugging session, every YouTube tutorial
+            you replayed a hundred times, every small improvement, they were
+            shaping you into the developer you are today. So if life ever gets
+            busy and you start to forget the “why,” pause and breathe. Remember
+            that your journey wasn’t just about becoming a great developer, it
+            was about becoming a person who never gave up on growth. You once
+            prayed to be where you are now. You once dreamed of building things
+            that make people’s lives easier. So don’t lose that fire, that
+            curiosity, that hunger to learn. Celebrate the progress, no matter
+            how small. Stay humble, stay kind, and keep showing up, even on the
+            hard days. Because one day, you’ll look back again… and smile even
+            wider.
+          </p>
+        </section>
+        <section class="extra-thoughts" data-testid="test-about-extra">
+          <h3>Extra Thoughts</h3>
+          <p>
+            If there’s one thing I’ve learned, it’s that progress rarely feels
+            like progress when you’re in the middle of it. It’s easy to look
+            around and feel behind, but growth is often invisible until one day
+            you look back and realize how far you’ve come. I joined this journey
+            not just to build skills, but to build resilience, to learn how to
+            keep showing up even when things get hard. I’m excited, nervous, and
+            hopeful all at once. And if I could leave a note to myself for this
+            program, it would simply say: Be open. Be kind. Learn loudly. Fail
+            gracefully. Keep building. Because every experience, whether it’s a
+            success or a struggle, is another line of code in the story I’m
+            writing for myself.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <section class="contact-card card" data-testid="test-contact-page" id="contact-card">
+      <h2>Get In Touch</h2>
+      <div class="contact-form-wrapper">
+        <form
+          action=""
+          class="contact-form"
+          id="contact-form"
+          data-testid="test-contact-form"
+        >
+          <div class="input-wrapper">
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              data-testid="test-contact-name"
+              pattern="^[A-Za-z]+(?:[' -][A-Za-z]+)* [A-Za-z]+(?:[' -][A-Za-z]+)*$"
+              aria-describedby="name-error"
+              aria-required="true"
+              required
+            />
+            <span
+              data-testid="test-contact-error-name"
+              id="name-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              data-testid="test-contact-email"
+              minlength="10"
+              pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+              aria-describedby="email-error"
+              aria-required="true"
+              required
+            />
+            <span
+              data-testid="test-contact-error-email"
+              id="email-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              data-testid="test-contact-subject"
+              aria-describedby="subject-error"
+              aria-required="true"
+              required
+            />
+            <span
+              data-testid="test-contact-error-subject"
+              id="subject-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="message">Message</label>
+            <textarea
+              type="text"
+              id="message"
+              name="message"
+              minlength="10"
+              data-testid="test-contact-message"
+              aria-describedby="message-error"
+              aria-required="true"
+              required
+            ></textarea>
+            <span
+              data-testid="test-contact-error-message"
+              id="message-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+          <div class="button-wrapper">
+            <button
+              type="submit"
+              data-testid="test-contact-submit"
+              class="submit-btn"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <div class="overlay" id="overlay"></div>
+        <div
+          class="success-message"
+          id="success-message"
+          data-testid="test-contact-success"
+        >
+          <h3>Thank you</h3>
+          <p>Your message has been delivered succesfully</p>
+          <button id="close-popup">Close</button>
+        </div>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>

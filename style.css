@@ -18,19 +18,51 @@
 html,
 body {
   font-size: 14px;
+  scroll-behavior: smooth;
 }
 body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: var(--text-dark);
   overflow-x: hidden;
   width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   padding: 2rem;
 }
-article {
+.tab-btn-wrapper {
+  margin-bottom: 2rem;
+}
+.tab-btn-wrapper ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+.tab-btn-wrapper li {
+  padding: 5px;
+}
+.tab-btn-wrapper li a {
+  background-color: var(--bg-light);
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.5s ease-in-out;
+  color: var(--text-dark);
+  display: block;
+  cursor: pointer;
+}
+.tab-btn-wrapper li a:hover {
+  background-color: rgba(108, 99, 255, 0.2);
+}
+.tab-btn-wrapper li a.active {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+article,
+.about-card,
+.contact-card {
   background-color: var(--bg-white);
   overflow: hidden;
   border-radius: 10px;
@@ -40,7 +72,9 @@ article {
   justify-content: center;
   transition: all 0.5s ease-in-out;
 }
-article:hover {
+article:hover,
+.about-card:hover,
+.contact-card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-5px);
 }
@@ -53,7 +87,7 @@ article:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 .profile-container {
   display: flex;
@@ -108,14 +142,14 @@ header p {
   text-align: center;
 }
 
-nav ul {
+.social-links ul {
   display: flex;
   list-style-type: none;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-nav ul li a {
+.social-links ul li a {
   text-decoration: none;
   background-color: var(--bg-light);
   color: var(--primary);
@@ -125,7 +159,7 @@ nav ul li a {
   padding: 6px;
   transition: all 0.5s ease-in-out;
 }
-nav ul li a:hover {
+.social-links ul li a:hover {
   background-color: var(--primary);
   color: var(--bg-white);
 }
@@ -185,9 +219,9 @@ nav ul li a:hover {
   text-align: center;
   border-radius: 10px;
 }
-.time-container p{
-    line-height: 1.7;
-    font-weight: 500;
+.time-container p {
+  line-height: 1.7;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   html,
@@ -195,7 +229,8 @@ nav ul li a:hover {
     font-size: 15px;
   }
   .card-content {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr; 
+    padding: 2rem;
   }
 }
 @media (min-width: 1024px) {
@@ -203,4 +238,237 @@ nav ul li a:hover {
   body {
     font-size: 16px;
   }
+}
+
+/* About */
+.about-card{
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about-card h3 {
+  text-align: left;
+}
+.about-card article {
+  padding: 30px;
+}
+.about-card h3 {
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+.about-card h3::before {
+  content: "•";
+  color: var(--accent);
+  font-size: 2rem;
+  padding-right: 10px;
+}
+.about-card article p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Contact */
+.contact-card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-card h2{
+  padding-top: 20px;
+}
+.contact-form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.input-wrapper label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.contact-form .input-wrapper input,
+.contact-form .input-wrapper textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--bg-light);
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+  background-color: var(--bg-white);
+}
+
+.input-wrapper textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.error {
+  border-color: red;
+}
+
+.error-message {
+  display: none;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+.error-message.show {
+  display: block;
+}
+
+.button-wrapper {
+  padding: 20px;
+}
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: var(--bg-white);
+  border: none;
+  outline: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(108, 99, 255, 0.4);
+}
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.success-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-light);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, alpha) 0.2;
+  z-index: 999;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+.success-message.show {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.success-message p {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+.success-message button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.success-message button:hover {
+  background: var(--accent);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.overlay.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.slide-in-bottom {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.card,
+.about-card,
+.contact-card {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.card.active,
+.about-card.active,
+.contact-card.active {
+  display: block;
+  opacity: 1;
 }
