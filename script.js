@@ -75,6 +75,11 @@ function validateSubject() {
     Subject.classList.add("error");
     SubjectError.classList.add("show");
     return false;
+  } else if (Subject.value.length < 3) {
+    SubjectError.textContent = `Subject should be at least 3 characters; you entered ${Message.value.length}`;
+    Subject.classList.add("error");
+    SubjectError.classList.add("show");
+    return false;
   } else {
     Subject.classList.remove("error");
     SubjectError.classList.remove("show");

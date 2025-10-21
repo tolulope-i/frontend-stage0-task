@@ -309,18 +309,22 @@ header p {
   min-height: 150px;
   resize: vertical;
 }
-.error {
-  border-color: red;
+#name.error,
+#email.error,
+#subject.error,
+#message.error {
+  border: 1px solid red;
 }
 
 .error-message {
   display: none;
   font-size: 0.8rem;
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
   display: none;
 }
 .error-message.show {
   display: block;
+  color: red;
 }
 
 .button-wrapper {
